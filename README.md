@@ -1,4 +1,4 @@
-# The Crypto Scrapping Website
+# The Movie Searcher Website
 
 This exercise has been made by myself and the support of my team (THP-Nice) in order to pratice scrapping in Ruby on Rails. 
 This exercise has been made with Postgresql, open-uri, nokogiri, themoviedb gem, and has been published on Heroku.
