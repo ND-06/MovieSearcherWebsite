@@ -1,24 +1,15 @@
-# README
+# The Crypto Scrapping Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This exercise has been made by myself and the support of my team (THP-Nice) in order to pratice scrapping in Ruby on Rails. 
+This exercise has been made with Postgresql, open-uri, nokogiri, themoviedb gem, and has been published on Heroku.
 
-Things you may want to cover:
+Please, after cloning the repo, make a bundle install inside the folder, make a rails db:create, and then a rails db:migrate.
 
-* Ruby version
+This website allows you to search, by typing the title of the movie, some informations : The release date of the movie, the name of the movie and the picture related to the movie.
 
-* System dependencies
+This scrapping has been build with themoviedb gem, a famous website which gives informations about all movies.
 
-* Configuration
+Heroku Link : https://themoviesearcherwebsite.herokuapp.com/
 
-* Database creation
+Enjoy !
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
