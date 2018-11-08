@@ -1,0 +1,9 @@
+
+  <div align="center">
+  <h1>Enter the title of your Movie</h1>
+    <%= form_for :movie, url: root_path do |f| %>
+    <%= f.text_field :search, class: "form-control" %>
+    <%= f.submit "Search", class: "btn btn-primary"%>
+    <% end %>
+                
+    
