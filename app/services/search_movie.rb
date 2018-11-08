@@ -1,21 +1,33 @@
+require 'themoviedb'
+
 class SearchMovie
-   
-  def initialize(movie)
+
+  def initialize(query)
+
     Tmdb::Api.key(Rails.application.credentials[:moviedbkey])
-    @user_search = movie
-    @moviesarray = []
+    @query = query
+    @result = Hash.new
   end
 
-  def search
-    @movie = Tmdb::Movie.find
-    puts @movie
-    @movie.each do |movie|
-    	temporary_hash = {}
-    	  temporary_hash[:name] = movie.title
-    	  temporary_hash[:release_date] = movie.release_date
-        temporary_hash[:poster_path] = movie.poster_path
-      @moviesarray << temporary_hash
+  def perform
+
+    @movies = Tmdb::Movie.find(@query)
+    @movies.each_with_index do |movie, index|
+      if index == 20
+        break
+      end
+      credits = Tmdb::Movie.credits(movie.id)
+      director = credits['crew'].select{ |crew| crew['department'] == 'Directing'}
+      director = director[0]['name']
+      @result[movie.id] = {
+        name: movie.title,
+        release_date: movie.release_date,
+        poster_path: movie.poster_path,
+        director: director
+      }
     end
-    return @moviesarray
-  end  
-end      
+    return @result
+  end
+end
+
+ 
